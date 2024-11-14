@@ -2,6 +2,10 @@
 
 ## Requisitos
 
+### Usuários
+
+nome, email, senha e documento da pessoa (data,nome,cpf, nascimento,rg).
+
 ### Familia
 
 *Obrigatório
@@ -55,9 +59,13 @@ Placa*,Ano*,Modelo*,Chassi*,Cor*,CRV*,Renavam*,Foto_Veículo*,Foto_CRV*
 Tanque:
 Placa*,Ano*,Modelo*,Capacidade*,Cor*
 
-### Opcional
+### Observações
 
-*IOT* - sensor para verificar o nível de aguá da caixa da familia o qual teria um id vinculado a fámilia.
+*Light/Dark mode* - Tema claro e escuro pode ser escolhido pelo usuário.  
+*Acessibilidade mobile* - O site deve prover uma boa experiência mobile.  
+*Criptografia* - A senha do usuário deve ser criptografada antes de entrar no banco de dados
+(bcrypt).  
+*IOT* - Sensor para verificar o nível de aguá da caixa da familia o qual teria um id vinculado a fámilia.  
 
 ## Ferramentas
 
