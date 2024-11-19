@@ -4,7 +4,17 @@
 
 ### Usuários
 
-nome, email, senha e documento da pessoa (data,nome,cpf, nascimento,rg).
+*Obrigatório*
+
+* Usuário
+* Email
+* Senha
+* Documento da pessoa 
+    * Nome
+    * Cpf
+    * Data de nascimento
+    * Função na empresa
+    * Função no sistema (Adm, Colaborador, Visualizador)
 
 ### Familia
 
@@ -13,12 +23,22 @@ nome, email, senha e documento da pessoa (data,nome,cpf, nascimento,rg).
 **Pessoas**
 
 ***Nome do responsável:***  
-(nome*,cpf*,nascimento*,gmail*,telefone*,foto_Documento*(analise para solicitação))  
+* Nome Completo*
+* CPF*
+* Data de nascimento*
+* Gmail*
+* Telefone*
+* Foto_Documento*
+
 *OBS: Frontend seria interativa, botão de adicionar integrante, e aparecer formulário.*  
 *Gerar um ID da Familia*
 
 ***Integrantes:***  
-(nome*,cpf*,nascimento*,gmail,telefone)  
+* Nome completo*
+* CPF* 
+* Data de nascimento*
+* Gmail
+* Telefone
 
 **Backend**  
 *trazer número de integrantes da familia*  
@@ -28,7 +48,13 @@ nome, email, senha e documento da pessoa (data,nome,cpf, nascimento,rg).
 **Endereço**
 
 Local da casa e informação:  
-CEP*,rua*,numero*,bairro*,cidade*,uf*, Capacidade da caixa(opcional, iremos verificar se rolar IOT)*
+* CEP*
+* Rua*
+* Número*
+* Bairro*
+* Cidade*
+* UF*
+* Capacidade da caixa(opcional, iremos verificar se rolar IOT)*
 
 *backend*
 
