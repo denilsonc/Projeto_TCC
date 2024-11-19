@@ -2,6 +2,20 @@
 
 ## Requisitos
 
+### Usuários
+
+*Obrigatório*
+
+* Usuário
+* Email
+* Senha
+* Documento da pessoa 
+    * Nome
+    * Cpf
+    * Data de nascimento
+    * Função na empresa
+    * Função no sistema (Adm, Colaborador, Visualizador)
+
 ### Familia
 
 *Obrigatório
@@ -9,12 +23,22 @@
 **Pessoas**
 
 ***Nome do responsável:***  
-(nome*,cpf*,nascimento*,gmail*,telefone*,foto_Documento*(analise para solicitação))  
+* Nome Completo*
+* CPF*
+* Data de nascimento*
+* Gmail*
+* Telefone*
+* Foto_Documento*
+
 *OBS: Frontend seria interativa, botão de adicionar integrante, e aparecer formulário.*  
 *Gerar um ID da Familia*
 
 ***Integrantes:***  
-(nome*,cpf*,nascimento*,gmail,telefone)  
+* Nome completo*
+* CPF* 
+* Data de nascimento*
+* Gmail
+* Telefone
 
 **Backend**  
 *trazer número de integrantes da familia*  
@@ -24,7 +48,13 @@
 **Endereço**
 
 Local da casa e informação:  
-CEP*,rua*,numero*,bairro*,cidade*,uf*, Capacidade da caixa(opcional, iremos verificar se rolar IOT)*
+* CEP*
+* Rua*
+* Número*
+* Bairro*
+* Cidade*
+* UF*
+* Capacidade da caixa(opcional, iremos verificar se rolar IOT)*
 
 *backend*
 
@@ -55,9 +85,13 @@ Placa*,Ano*,Modelo*,Chassi*,Cor*,CRV*,Renavam*,Foto_Veículo*,Foto_CRV*
 Tanque:
 Placa*,Ano*,Modelo*,Capacidade*,Cor*
 
-### Opcional
+### Observações
 
-*IOT* - sensor para verificar o nível de aguá da caixa da familia o qual teria um id vinculado a fámilia.
+*Light/Dark mode* - Tema claro e escuro pode ser escolhido pelo usuário.  
+*Acessibilidade mobile* - O site deve prover uma boa experiência mobile.  
+*Criptografia* - A senha do usuário deve ser criptografada antes de entrar no banco de dados
+(bcrypt).  
+*IOT* - Sensor para verificar o nível de aguá da caixa da familia o qual teria um id vinculado a fámilia.  
 
 ## Ferramentas
 
