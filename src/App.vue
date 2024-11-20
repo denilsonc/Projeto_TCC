@@ -5,13 +5,16 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="@/assets/aquasys_logo1.png" width="225" height="225" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      
+      <HelloWorld msg="Aquasys" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">Login</RouterLink>
+        <RouterLink to="/home">Home</RouterLink>
+        <RouterLink to="/testing">Test</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
