@@ -14,6 +14,12 @@ a,
   transition: 0.4s;
   padding: 3px;
 }
+.blue {
+  text-decoration: none;
+  color: var(--color-principal);
+  transition: 0.4s;
+  padding: 3px;
+}
 
 @media (hover: hover) {
   a:hover {
