@@ -6,6 +6,21 @@
   padding: 2rem;
   font-weight: normal;
 }
+.bg-color-primary{
+  background-color: var(--color-primary);
+}
+.bg-color-secondary{
+  background-color: var(--color-secondary);
+}
+.bg-color-tertiary{
+  background-color: var(--color-tertiary);
+}
+.bg-color-quaternário{
+  background-color: var(--color-quaternário);
+}
+.bg-color-quinary{
+  background-color: var(--color-quinary);
+}
 .text-color-primary{
   color: var(--color-primary);
 }
@@ -46,7 +61,7 @@ button {
 a,
 .blue {
   text-decoration: none;
-  color: var(--color-primary);
+  color: var(--color-link-color);
   transition: 0.4s;
   padding: 3px;
 }
