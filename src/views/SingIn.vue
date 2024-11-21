@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <section>
-  <div class="flex min-h-full flex-1 flex-row justify-center px-6 py-12 lg:px-8 login">
+  <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 login">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm text-center">
       <img class="mx-auto" src="@/assets/aquasys_logo1.png" alt="Your Company" width="255" height="255" />
       <h1 class="blue text-6xl">Aquasys</h1>
@@ -67,10 +67,10 @@ header {
 }
 
 @media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
+  .login {
     display: flex;
     align-items: center;
+    flex-direction: row;
   }
 
   header {
