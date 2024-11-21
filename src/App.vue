@@ -1,24 +1,28 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from 'vue-router';
+import HelloWorld from './components/HelloWorld.vue';
+import Navbar from './components/NavBar.vue';
+defineProps<{
+}>()
 </script>
 
 <template>
-  <header>
+  <!-- <header>
+    <Navbar v-show="true"/>
     <img alt="Vue logo" class="logo" src="@/assets/aquasys_logo1.png" width="225" height="225" />
 
     <div class="wrapper">
-      
+
       <HelloWorld msg="Aquasys" />
 
       <nav>
         <RouterLink to="/">Login</RouterLink>
         <RouterLink to="/home">Home</RouterLink>
-        <RouterLink to="/testing">Test</RouterLink>
+        <RouterLink to="/users/view">Users</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
-  </header>
+  </header> -->
 
   <RouterView />
 </template>

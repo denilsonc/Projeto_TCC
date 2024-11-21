@@ -1,4 +1,8 @@
 /* color palette from <https://github.com/vuejs/theme> */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -23,7 +27,6 @@
   --color-secundario: #0D6BA6;
   --color-tercerizado: #0D96D4;
   --color-quartenario: #04B2D9;
-  --color-quintanario: #0D0D0D;
 
 }
 
@@ -32,7 +35,8 @@
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
-
+  --color-block-background: var(--vt-c-black);
+  --color-block-text: var(--vt-c-text-dark-1);
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
 
@@ -47,7 +51,8 @@
     --color-background: var(--vt-c-black);
     --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute);
-
+    --color-block-background: var(--vt-c-white);
+    --color-block-text: var(--vt-c-text-light-1);
     --color-border: var(--vt-c-divider-dark-2);
     --color-border-hover: var(--vt-c-divider-dark-1);
 

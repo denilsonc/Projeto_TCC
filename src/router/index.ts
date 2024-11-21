@@ -18,14 +18,21 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue'),
     },
     {
-      path: '/testing',
-      name: 'Testing',
-      component: () => import('../views/TestingPage.vue'),
+      path: '/Users',
+      name: 'Users',
+      component: () => import('../views/Users.vue'),
+      children:[
+        {
+          path: 'View',
+          name: 'UsersView',
+          component: () => import('../views/Users/View.vue'),
+        }
+      ]
     },
     {
       path: '/',
       name: 'Singin',
-      component: () => import('../views/SingIn.vue')
+      component: () => import('../views/SingIn.vue'),
     },
   ],
 })

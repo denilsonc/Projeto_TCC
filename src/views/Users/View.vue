@@ -1,12 +1,11 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string
-}>()
+<script lang="ts">
+export default {
+
+}
 </script>
 <template>
     <div class="about">
-        <h1>Testing</h1>
-        <h1>{{ msg }}</h1>
+        <h1>Users</h1>
     </div>
 </template>
 

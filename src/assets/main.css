@@ -7,13 +7,29 @@
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+.text-center {
+  text-align: center;
 }
+
+input {
+  width: 100%;
+  min-height: 30px;
+  border-radius: 5px;
+  border: 0.3px solid grey;
+  padding: 5px 10px;
+}
+
+input:focus {
+  border: 0.3px solid grey;
+  border-radius: 5px;
+}
+
+button {
+  text-align: center;
+  width: 90%;
+}
+
+a,
 .blue {
   text-decoration: none;
   color: var(--color-principal);
@@ -23,7 +39,12 @@ a,
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    /* background-color: hsla(197, 100%, 37%, 0.2); */
+    text-shadow: hsl(197, 100%, 37%) 1px 0 10px;
+  }
+
+  button:hover {
+    background-color: var(--color-secundario);
   }
 }
 
@@ -33,9 +54,13 @@ a,
     place-items: center;
   }
 
+  input {
+    min-width: 300px;
+  }
+
   #app {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0fr 0fr;
     padding: 0 2rem;
   }
 }
