@@ -29,7 +29,7 @@ defineProps<{
           <div class="flex items-center justify-between">
             <label for="password" class="block text-sm/6 font-medium text-gray-900">Senha</label>
             <div class="text-sm">
-              <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+              <a href="#" class="font-semibold text-color-primary">Forgot password?</a>
             </div>
           </div>
           <div class="mt-2">
@@ -56,11 +56,6 @@ defineProps<{
   color: var(--color-block-text);
   border-radius: 15px;
 }
-header {
-  line-height: 1.5;
-  max-height: 200vh;
-}
-
 .logo {
   display: block;
   margin: 0 auto 2rem;

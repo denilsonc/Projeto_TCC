@@ -23,10 +23,11 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-  --color-principal: #0F5FA6;
-  --color-secundario: #0D6BA6;
-  --color-tercerizado: #0D96D4;
-  --color-quartenario: #04B2D9;
+  --color-primary: #0F5FA6;
+  --color-secondary: #0D6BA6;
+  --color-tertiary: #0D96D4;
+  --color-quaternary: #04B2D9;
+  --color-quinary: #000;
 
 }
 

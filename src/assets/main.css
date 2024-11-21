@@ -6,7 +6,21 @@
   padding: 2rem;
   font-weight: normal;
 }
-
+.text-color-primary{
+  color: var(--color-primary);
+}
+.text-color-secondary{
+  color: var(--color-secondary);
+}
+.text-color-tertiary{
+  color: var(--color-tertiary);
+}
+.text-color-quaternário{
+  color: var(--color-quaternário);
+}
+.text-color-quinary{
+  color: var(--color-quinary);
+}
 .text-center {
   text-align: center;
 }
@@ -32,14 +46,13 @@ button {
 a,
 .blue {
   text-decoration: none;
-  color: var(--color-principal);
+  color: var(--color-primary);
   transition: 0.4s;
   padding: 3px;
 }
 
 @media (hover: hover) {
   a:hover {
-    /* background-color: hsla(197, 100%, 37%, 0.2); */
     text-shadow: hsl(197, 100%, 37%) 1px 0 10px;
   }
 
