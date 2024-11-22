@@ -1,4 +1,4 @@
-import { integer, pgTable, varchar, date} from "drizzle-orm/pg-core";
+import { integer, pgTable, varchar, date, boolean} from "drizzle-orm/pg-core";
 
 const basicInfo = {
     id:integer().primaryKey().generatedAlwaysAsIdentity(),
@@ -14,6 +14,7 @@ export const users = pgTable("users", {
     cellphone: varchar({ length: 255}).notNull().unique(),
     password: varchar({ length: 255 }).notNull(),
     privileges: varchar({ length: 255 }).notNull(),
+    active: boolean().notNull(),
 });
 
 export const drivers = pgTable("drivers", {
@@ -38,10 +39,11 @@ export const familyMember = pgTable("family_member", {
     email: varchar({ length: 255}).notNull().unique(),
     cpf: varchar({ length: 255}).notNull().unique(),
     cellphone: varchar({ length: 255}).notNull().unique(),
-    head_id: integer().references(() => headFamily.id),
+    head_id: integer().references(() => headFamily.id).notNull(),
 });
 
 export const trucks = pgTable("trucks", {
+    id: integer().primaryKey().generatedAlwaysAsIdentity(),
     plate: varchar({ length: 255 }).notNull().unique(),
     model: varchar({ length: 255 }).notNull(),
     year: date().notNull()
