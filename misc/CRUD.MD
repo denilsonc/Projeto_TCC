@@ -1,5 +1,17 @@
 # CRUD
 
+## Instalar Postgres via Docker
+
+Promet de comando win
+```sh
+docker pull postgres:latest 
+```
+
+executar e nomear container o banco no docker
+```sh
+docker run --rm --name PSQL -e POSTGRES_PASSWORD=senha -p 5432:5432 -d postgres
+```
+
 ## Iniciando
 
 Para realizar ações no banco de dados com o drizzle primeiro você precisa importar o banco,as funções que deseja usar dele (`eq` por exemplo,verifica se dois itens são iguais) e por último importar as tables exportadas do schema.
