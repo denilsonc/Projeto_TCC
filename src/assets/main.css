@@ -39,6 +39,9 @@
 .text-center {
   text-align: center;
 }
+.text-alert{
+  color: var(--color-text-alert-block);
+}
 
 input {
   width: 100%;

@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
+import { checkEmail, checkPassword } from '@/utils/LoginFunctions';
 defineProps<{
 }>()
+let login = checkEmail('email') && checkPassword('email')
 </script>
 
 <template>
@@ -18,30 +20,31 @@ defineProps<{
       </header>
       <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form class="space-y-6" action="#" method="POST">
-          <div>
+          <div> <!--Usuário-->
             <label for="email" class="block text-sm font-medium">Usuário</label>
             <div class="mt-2">
               <input id="email" name="email" type="email" autocomplete="email" required
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" />
             </div>
           </div>
-
-          <div>
+          <div> <!--Senha-->
             <div class="flex items-center justify-between">
               <label for="password" class="block text-sm/6 font-medium">Senha</label>
               <div class="text-sm">
-                <a href="#" class="font-semibold blue">Esqueceu a senha?</a>
+                <a href="#" class="font-semibold text-sky-400 hover:text-sky-300 dark:text-sky-700 dark:hover:text-sky-600">Esqueceu a senha?</a>
               </div>
             </div>
             <div class="mt-2">
               <input id="password" name="password" type="password" autocomplete="current-password" required
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" />
             </div>
+            <div>
+              <p v-if="!login" class="text-center font-medium py-2 text-alert">Usuário/Senha incorretos!</p>
+            </div>
           </div>
-
-          <div>
+          <div> <!--Botão de enviar-->
             <button type="submit"
-              class="flex w-full justify-center rounded-md bg-color-primary px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Entrar</button>
+              class="flex w-full justify-center rounded-md bg-color-primary px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Entrar</button>
           </div>
         </form>
       </div>
@@ -55,7 +58,7 @@ defineProps<{
   background-color: var(--color-block-background);
   color: var(--color-block-text);
   border-radius: 15px;
-  
+
 }
 
 .logo {

@@ -19,6 +19,7 @@
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
   --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
   --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  --vt-c-divider-dark-3: rgb(37, 36, 36);
 
   --vt-c-text-light-1: var(--vt-c-indigo);
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
@@ -30,6 +31,8 @@
   --color-tertiary: #0D96D4;
   --color-quaternary: #04B2D9;
   --color-quinary: #000;
+  --color-alert-red-black: rgb(255, 0, 0);
+  --color-alert-red-light: red;
 
 }
 
@@ -38,13 +41,14 @@
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
-  --color-block-background: var(--vt-c-black-block);
+  --color-block-background: var(--vt-c-divider-dark-3);
   --color-block-text: var(--vt-c-text-dark-1);
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
   --color-link-color: var(--color-tertiary);
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
+  --color-text-alert-block: var(--color-alert-red-black);
 
   --section-gap: 160px;
 }
@@ -59,6 +63,7 @@
     --color-border: var(--vt-c-divider-dark-2);
     --color-border-hover: var(--vt-c-divider-dark-1);
     --color-link-color: var(--color-primary);
+    --color-text-alert-block: var(--color-alert-red-light);
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
