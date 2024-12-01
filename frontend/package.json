@@ -13,10 +13,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --fix",
-    "format": "prettier --write src/",
-    "db:push": "npx drizzle-kit push",
-    "db:gen": "npx drizzle-kit generate",
-    "db:mig": "npx drizzle-kit migrate"
+    "format": "prettier --write src/"
   },
   "dependencies": {
     "drizzle-orm": "^0.36.3",
