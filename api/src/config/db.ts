@@ -6,4 +6,4 @@ import dotenv from 'dotenv';
 dotenv.config();
 const url: any = process.env.DATABASE_URL
 
-const db = drizzle(url);
+export const db = drizzle(url);
