@@ -13,3 +13,7 @@ npm run dev
 ```
 
 No postman verifica se _localhost:`porta`/api_ está retornando a mensagem que foi montada no [check-router](../api/src/routes/check-router.ts)
+
+# posttest
+
+Referencia [glaucia Lemos](https://www.youtube.com/watch?v=igw22ZmaGrc)
