@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { router } from './router'
+import router from './router'
 
 export class App {
     private server: express.Application = express()
