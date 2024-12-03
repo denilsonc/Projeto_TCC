@@ -6,7 +6,7 @@
  */
 
 import { Request, Response} from "express";
-import db from "../config/db";
+import { db } from "../config/db";
 import { users } from "../config/model/schema";
 
 export class Test {
@@ -19,7 +19,7 @@ export class Test {
     }
     public async showTables( req: Request, res: Response){
         try {
-            const rows = await db("SELECT * FROM users")
+            const rows = await db.select().from(users)
             return res.status(201).send({ rows: rows })
         } catch (error) {
             console.error('mostrar tabelas',error)
