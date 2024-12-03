@@ -11,8 +11,9 @@ export class App {
         this.router()
     }
     private middleware(){
-      this.server.use(cors())
+      this.server.use(express.urlencoded({ extended: true }))
       this.server.use(express.json());
+      this.server.use(cors())
     }
   
     private router(){
