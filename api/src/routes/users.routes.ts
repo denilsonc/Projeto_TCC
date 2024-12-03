@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
 import UserController from "../controllers/users.controller";
 
 const router = Router()
@@ -18,8 +18,5 @@ router.get('/viewaddress/:id', usersController.viewUsersWhitAddress)
 router.get('/update/:id', usersController.updateUser)
 // * Rota responsável por listar usuário especifico: (GET): localhost:3000/users/delete/:id
 router.get('/delete/:id', usersController.deleteUser)
-
-
-
 
 export default router;

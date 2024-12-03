@@ -5,7 +5,7 @@
  * Autor: Jeferson Braga
  */
 import { Request, Response } from "express"
-import { db, eq, lt, gte, ne, or } from "../config/db";
+import { db, eq } from "../config/db";
 import { address, users } from "../config/model/schema";
 import { console } from "inspector";
 
@@ -15,7 +15,7 @@ const createUser = async (req: Request, res: Response) => {
     try {
         const rows = await db.insert(users).values({
             name: nameuser,
-            active: true,
+            active: active? active: true,
             address: address,
             birthday: birthday,
             cellphone: cellphone,
@@ -30,7 +30,8 @@ const createUser = async (req: Request, res: Response) => {
                 user: {
                     nameuser, birthday, address, email, cpf, cellphone, password, privileges, active
                 }
-            }
+            },
+            row: rows                
         })
     } catch (error) {
         console.error('users-view: ', error);
@@ -102,7 +103,7 @@ const updateUser = async (req: Request, res: Response) => {
     try {
         const rows = await db.update(users).set({
             name: nameuser,
-            active: true,
+            active: active? active: true,
             address: address,
             birthday: birthday,
             cellphone: cellphone,
@@ -111,7 +112,9 @@ const updateUser = async (req: Request, res: Response) => {
             password: password,
             privileges: privileges
         }).where(eq(users.id, Number(id)))
-        res.status(200).send({ message: 'Usuário atualizado com sucesso!' })
+        res.status(200).send({ message: 'Usuário atualizado com sucesso!',
+            row: rows
+         })
     } catch (error) {
         console.log('updateUser: ', error);
         res.status(500).send({
@@ -125,7 +128,9 @@ const deleteUser = async (req: Request, res: Response) => {
     const { id } = req.params
     try {
         const rows = await db.delete(users).where(eq(users.id, Number(id)));
-        res.status(200).send({ message: 'Usuário excluído com sucesso!' })
+        res.status(200).send({ message: 'Usuário excluído com sucesso!',
+            row: rows
+         })
     } catch (error) {
         console.log('updateUser: ', error);
         res.status(500).send({
