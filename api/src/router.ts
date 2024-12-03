@@ -20,6 +20,7 @@ router.get('/tables', (req: Request,res:Response)=>{
 router.get("/", (req: Request, res: Response) => {
     firstController.home(req,res)
 });
+
 //Rotas de usuários 
 router.use('/users/', usersRoutes)
 
