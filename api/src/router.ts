@@ -4,12 +4,14 @@ import { Test } from './routes/check-router';
 import Users from './routes/users.routes';
 import Address from './routes/address.routes';
 import Trucks from './routes/trucks.routes';
+import Drivers from './routes/drivers.routes';
 
 
 const router = Router()
 const usersRoutes = Users
 const addressRoutes = Address 
 const trucksRoutes = Trucks
+const driversRoutes = Drivers
 
 const firstController = new FirstController()
 const test = new Test()
@@ -29,5 +31,6 @@ router.get("/", (req: Request, res: Response) => {
 router.use('/users/', usersRoutes)
 router.use('/address/', addressRoutes)
 router.use('/trucks/', trucksRoutes)
+router.use('/drivers/', driversRoutes)
 
 export default router;
