@@ -38,6 +38,25 @@ Instalando o PgAdmin no msm network do batabase para ter o visual do msm
 docker run --name PSQL-PgAdmin --network=database -p 15432:80 -e PGADMIN_DEFAULT_EMAIL=email@email.com -e PGADMIN_DEFAULT_PASSWORD=123456 -d dpage/pgadmin4
 ```
 
+## Configurar o DB no PG Admin
+
+Para aparecer o banco no PgAdmin
+
+Clique com direito no servers > Registrar:
+
+* Gerneral
+    * Name: Nome da conexão. Escolha própria.
+* Connection 
+    * Host name/address: Nome do container (cosnegue através do `docker ps`) 
+    * Maintenance database: Nome do banco de dados
+    * Username: Usuário informado na criação do banco de dados. 
+    * Password: Senha informada na cosntrução do database
+
+Verificar as imagens do Docker
+```sh
+docker ps
+```
+
 ## Referêncais
 
 https://www.youtube.com/watch?v=CdoBvd_bPdk
