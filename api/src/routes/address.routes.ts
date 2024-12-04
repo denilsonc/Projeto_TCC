@@ -12,7 +12,7 @@ router.get('/view', addressController.viewAddressAll)
 router.get('/view/:id', addressController.viewAddress)
 // Rota responsável por atualizar endereço especifico: (PUT): localhost:3000/address/update/:id 
 router.put('/update/:id', addressController.updateAddress)
-//  Rota responsável por deleta endereço especifico: (DELETE): localhost:3000/users/delete/:id
+// Rota responsável por deleta endereço especifico: (DELETE): localhost:3000/users/delete/:id
 router.delete('/delete/:id', addressController.deleteAddress)
 
 export default router;
