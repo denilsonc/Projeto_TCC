@@ -1,11 +1,13 @@
 import { Request, Response, Router } from 'express'
 import { FirstController } from './controllers/teste';
 import { Test } from './routes/check-router';
-import Users from './routes/users.routes'
+import Users from './routes/users.routes';
+import Address from './routes/address.routes';
 
 
 const router = Router()
 const usersRoutes = Users
+const addressRoutes = Address 
 
 const firstController = new FirstController()
 const test = new Test()
@@ -23,5 +25,6 @@ router.get("/", (req: Request, res: Response) => {
 
 //Rotas de usuários 
 router.use('/users/', usersRoutes)
+router.use('/address/', addressRoutes)
 
 export default router;
