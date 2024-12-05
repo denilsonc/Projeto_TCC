@@ -74,7 +74,7 @@ const viewUsersAllWithAddress = async (req: Request, res: Response) => {
         const rows = await db.select().from(users).innerJoin(address, eq(users.address, address.id));
         res.status(200).send(rows);
     } catch (error) {
-        console.log('viewUsersAllWhitAddress: ', error);
+        console.log('viewUsersAllWithAddress: ', error);
         res.status(500).send({
             message: 'Ocorreu um erro.',
             error: error
@@ -88,7 +88,7 @@ const viewUsersWithAddress = async (req: Request, res: Response) => {
         const rows = await db.select().from(users).where(eq(users.id, Number(id))).innerJoin(address, eq(users.address, address.id));
         res.status(200).send(rows);
     } catch (error) {
-        console.error('viewUsersWhitAddress: ', error);
+        console.error('viewUsersWithAddress: ', error);
         res.status(500).send({
             message: 'Ocorreu um erro.',
             error: error
