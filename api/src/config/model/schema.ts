@@ -1,4 +1,5 @@
-import { integer, pgTable, varchar, date, boolean} from "drizzle-orm/pg-core";
+import { int } from "drizzle-orm/mysql-core";
+import { integer, pgTable, varchar, date, boolean, real } from "drizzle-orm/pg-core";
 
 const basicInfo = {
     id:integer().primaryKey().generatedAlwaysAsIdentity(),
@@ -67,4 +68,14 @@ export const address = pgTable("address", {
     neighborhood: varchar({ length: 255 }).notNull(),
     city: varchar({ length: 255 }).notNull(),
     state: varchar({ length: 255 }).notNull(),
+    latitude: real().notNull(),
+    longitude: real().notNull()
+});
+
+export const history = pgTable("history", {
+   head_id: integer().primaryKey().references(() => headFamily.id),
+   date: date().notNull(),
+   driver: integer().notNull().references(() => drivers.id),
+   truck: integer().notNull().references(() => trucks.id),
+   volume: real().notNull() 
 });

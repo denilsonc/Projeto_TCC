@@ -5,7 +5,7 @@ import { console } from "inspector";
 
 // Método responsável por criar um novo endereço:
 const createAddress = async (req: Request, res: Response) => {
-    const { cep, number, street, neighborhood, city, state } = req.body;
+    const { cep, number, street, neighborhood, city, state, latitude, longitude } = req.body;
     try {
         const rows = await db.insert(address).values({
             cep: cep,
@@ -13,7 +13,9 @@ const createAddress = async (req: Request, res: Response) => {
             street: street,
             neighborhood: neighborhood,
             city: city,
-            state: state
+            state: state,
+            latitude: latitude,
+            longitude: longitude
         }).returning();
         res.status(201).send({
             message: 'Address added successfully!',
@@ -64,7 +66,7 @@ const viewAddress = async (req: Request, res: Response) => {
 // Método atualiza um endereço:
 const updateAddress = async (req: Request, res: Response) => {
     const { id } = req.params
-    const { cep, number, street, neighborhood, city, state } = req.body;
+    const { cep, number, street, neighborhood, city, state, latitude, longitude } = req.body;
     try {
         const rows = await db.update(address).set({
             cep: cep,
@@ -72,7 +74,9 @@ const updateAddress = async (req: Request, res: Response) => {
             street: street,
             neighborhood: neighborhood,
             city: city,
-            state: state
+            state: state,
+            latitude: latitude,
+            longitude: longitude
         }).where(eq(address.id, Number(id)));
         res.status(200).send({ message: 'Endereço atualizado com sucesso!',
             row: rows
