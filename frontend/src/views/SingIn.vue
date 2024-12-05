@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from 'vue-router';
 import { checkEmail, checkPassword } from '@/utils/LoginFunctions';
 defineProps<{
 }>()
-let login = checkEmail('email') && checkPassword('email')
+const login: boolean = checkEmail('email') && checkPassword('email')
 </script>
 
 <template>
@@ -39,7 +39,7 @@ let login = checkEmail('email') && checkPassword('email')
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" />
             </div>
             <div>
-              <p v-if="!login" class="text-center font-medium py-2 text-alert">Usuário/Senha incorretos!</p>
+              <p v-if="login" class="text-center font-medium py-2 text-alert">Usuário/Senha incorretos!</p>
             </div>
           </div>
           <div> <!--Botão de enviar-->

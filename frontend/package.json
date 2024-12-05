@@ -16,6 +16,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vue/compiler-dom": "^3.5.13",
     "drizzle-orm": "^0.36.3",
     "pinia": "^2.2.6",
     "postgres": "^3.4.5",
