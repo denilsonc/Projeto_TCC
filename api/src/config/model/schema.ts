@@ -25,6 +25,8 @@ export const drivers = pgTable("drivers", {
     cnh_number: varchar({ length: 255 }).notNull().unique(),
     cnh_category: varchar({ length: 255 }).notNull(),
     cnh_date: date().notNull(),
+    created_by: integer().references(() => users.id),
+    updated_by: integer().references(() => users.id),
 });
 
 export const headFamily = pgTable("head_family", {
@@ -32,6 +34,8 @@ export const headFamily = pgTable("head_family", {
     email: varchar({ length: 255}).notNull().unique(),
     cpf: varchar({ length: 255}).notNull().unique(),
     cellphone: varchar({ length: 255}).notNull().unique(),
+    created_by: integer().references(() => users.id),
+    updated_by: integer().references(() => users.id),
 });
 
 export const familyMember = pgTable("family_member", {
@@ -40,13 +44,18 @@ export const familyMember = pgTable("family_member", {
     cpf: varchar({ length: 255}).notNull().unique(),
     cellphone: varchar({ length: 255}).notNull().unique(),
     head_id: integer().references(() => headFamily.id).notNull(),
+    created_by: integer().references(() => users.id),
+    updated_by: integer().references(() => users.id),
 });
 
 export const trucks = pgTable("trucks", {
     id: integer().primaryKey().generatedAlwaysAsIdentity(),
     plate: varchar({ length: 255 }).notNull().unique(),
     model: varchar({ length: 255 }).notNull(),
-    year: date().notNull()
+    year: date().notNull(),
+    owner: integer().references(() => drivers.id),
+    created_by: integer().references(() => users.id),
+    updated_by: integer().references(() => users.id),
 });
 
 export const address = pgTable("address", {
