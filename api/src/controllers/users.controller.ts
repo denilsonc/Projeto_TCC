@@ -69,7 +69,7 @@ const viewUser = async (req: Request, res: Response) => {
     }
 }
 // * Método responsavél listar todos os usuário e seus endereços:
-const viewUsersAllWhitAddress = async (req: Request, res: Response) => {
+const viewUsersAllWithAddress = async (req: Request, res: Response) => {
     try {
         const rows = await db.select().from(users).innerJoin(address, eq(users.address, address.id));
         res.status(200).send(rows);
@@ -82,7 +82,7 @@ const viewUsersAllWhitAddress = async (req: Request, res: Response) => {
     }
 }
 // * Método responsavél listar usuário específico e seu endereço:
-const viewUsersWhitAddress = async (req: Request, res: Response) => {
+const viewUsersWithAddress = async (req: Request, res: Response) => {
     const { id } = req.params
     try {
         const rows = await db.select().from(users).where(eq(users.id, Number(id))).innerJoin(address, eq(users.address, address.id));
@@ -139,5 +139,4 @@ const deleteUser = async (req: Request, res: Response) => {
     }
 }
 
-
-export default { viewUsersAll, createUser, viewUser, viewUsersAllWhitAddress, viewUsersWhitAddress, updateUser, deleteUser }
+export default { viewUsersAll, createUser, viewUser, viewUsersAllWithAddress, viewUsersWithAddress, updateUser, deleteUser }

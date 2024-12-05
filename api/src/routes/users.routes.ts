@@ -11,9 +11,9 @@ router.get('/view', usersController.viewUsersAll)
 // * Rota responsável por listar usuário especifico: (GET): localhost:3000/users/view/:id
 router.get('/view/:id', usersController.viewUser)
 // * Rota responsável por listar usuário especifico: (GET): localhost:3000/users/viewaddress
-router.get('/viewaddress', usersController.viewUsersAllWhitAddress)
+router.get('/viewaddress', usersController.viewUsersAllWithAddress)
 // * Rota responsável por listar usuário especifico: (GET): localhost:3000/users/viewaddress/:id
-router.get('/viewaddress/:id', usersController.viewUsersWhitAddress)
+router.get('/viewaddress/:id', usersController.viewUsersWithAddress)
 // * Rota responsável por listar usuário especifico: (PUT): localhost:3000/users/update/:id
 router.put('/update/:id', usersController.updateUser)
 // * Rota responsável por listar usuário especifico: (DELETE): localhost:3000/users/delete/:id
