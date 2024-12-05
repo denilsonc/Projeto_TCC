@@ -19,6 +19,10 @@ router.get('/viewAddress', headsController.viewHeadAllWithAddress)
 
 router.get('/viewAddress/:id', headsController.viewHeadWithAddress)
 
+router.get('/viewHistory', headsController.viewHeadAllWithHistory)
+
+router.get('/viewHistory/:id', headsController.viewHeadWithHistory)
+
 router.put('/update/:id', headsController.updateHead)
 
 router.delete('/delete/:id', headsController.deleteHead)

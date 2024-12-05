@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { db, eq } from "../config/db";
-import { address, headFamily, familyMember } from "../config/model/schema";
+import { address, headFamily, familyMember, history } from "../config/model/schema";
 import { console } from "inspector";
 
 const createHead = async (req: Request, res: Response) => {
@@ -115,6 +115,33 @@ const viewHeadWithMembers = async (req: Request, res: Response) => {
     }
 }
 
+const viewHeadAllWithHistory = async (req: Request, res: Response) => {
+    try {
+        const rows = await db.select().from(headFamily).innerJoin(history, eq(headFamily.id, history.head_id));
+        res.status(200).send(rows);
+    } catch (error) {
+        console.log('viewHeadAllWithHistory: ', error);
+        res.status(500).send({
+            message: 'Ocorreu um erro.',
+            error: error
+        });
+    }
+}
+
+const viewHeadWithHistory = async (req: Request, res: Response) => {
+    const { id } = req.params
+    try {
+        const rows = await db.select().from(headFamily).where(eq(headFamily.id, Number(id))).innerJoin(history, eq(headFamily.id, history.head_id));
+        res.status(200).send(rows);
+    } catch (error) {
+        console.error('viewHeadWithHistory: ', error);
+        res.status(500).send({
+            message: 'Ocorreu um erro.',
+            error: error
+        });
+    }
+}
+
 const updateHead = async (req: Request, res: Response) => {
     const { id } = req.params
     const { nameuser, birthday, address, email, cpf, cellphone, created_by, updated_by } = req.body;
@@ -157,4 +184,4 @@ const deleteHead = async (req: Request, res: Response) => {
     }
 }
 
-export default { createHead, viewHeadAll, viewHead, viewHeadAllWithAddress, viewHeadWithAddress, viewHeadAllWithMembers, viewHeadWithMembers, updateHead, deleteHead }
+export default { createHead, viewHeadAll, viewHead, viewHeadAllWithAddress, viewHeadWithAddress, viewHeadAllWithMembers, viewHeadWithMembers, viewHeadAllWithHistory, viewHeadWithHistory, updateHead, deleteHead }
