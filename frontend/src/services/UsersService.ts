@@ -10,7 +10,7 @@ const getUsers = async () => {
             return 'Vazio'
         }
         const res = await response.json();
-        return res.data;
+        return res;
     } catch (error) {
         return console.error('Erro: ',error)
     }
