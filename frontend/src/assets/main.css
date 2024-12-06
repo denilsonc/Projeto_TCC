@@ -83,6 +83,7 @@ a,
   body {
     display: flex;
     place-items: center;
+    
   }
 
   input {
@@ -90,8 +91,8 @@ a,
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 0fr 0fr;
-    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    
   }
 }

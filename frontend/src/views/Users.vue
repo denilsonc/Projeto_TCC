@@ -1,8 +1,20 @@
-<script lang="ts" setup>
-import { RouterLink, RouterView } from 'vue-router';
+<script lang="ts">
+export default {
+    name: 'UsersView',
+    data() {
+        return {
+
+        };
+    },
+};
 </script>
 <template>
-    
-    <RouterLink to="/users/view">View</RouterLink>
-    <RouterView/>
+    <nav>
+        <router-link to="/users/create">Adicionar</router-link>
+        <router-link to="/users/list">Listar</router-link>
+        <router-link to="/users/update">Editar</router-link>
+    </nav>
+    <br>
+    <hr>
+    <router-view />
 </template>
