@@ -1,9 +1,11 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
+<script lang="ts">
 import { checkEmail, checkPassword } from '@/utils/LoginFunctions';
-defineProps<{
-}>()
-const login: boolean = checkEmail('email') && checkPassword('email')
+const loginUser: boolean = checkEmail('email') && checkPassword('email')
+export default {
+  name: 'SingIn',
+  method: {
+  },
+};
 </script>
 
 <template>
@@ -31,7 +33,9 @@ const login: boolean = checkEmail('email') && checkPassword('email')
             <div class="flex items-center justify-between">
               <label for="password" class="block text-sm/6 font-medium">Senha</label>
               <div class="text-sm">
-                <a href="#" class="font-semibold text-sky-400 hover:text-sky-300 dark:text-sky-700 dark:hover:text-sky-600">Esqueceu a senha?</a>
+                <a href="#"
+                  class="font-semibold text-sky-400 hover:text-sky-300 dark:text-sky-700 dark:hover:text-sky-600">Esqueceu
+                  a senha?</a>
               </div>
             </div>
             <div class="mt-2">
@@ -39,7 +43,7 @@ const login: boolean = checkEmail('email') && checkPassword('email')
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" />
             </div>
             <div>
-              <p v-if="login" class="text-center font-medium py-2 text-alert">Usuário/Senha incorretos!</p>
+              <p v-if="!loginUser" class="text-center font-medium py-2 text-alert">Usuário/Senha incorretos!</p>
             </div>
           </div>
           <div> <!--Botão de enviar-->

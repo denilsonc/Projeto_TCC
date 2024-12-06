@@ -1,8 +1,7 @@
 <script lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
-import HelloWorld from '@/components/HelloWorld.vue';
-defineProps<{
-}>()
+export default {
+
+}
 </script>
 
 <template>

@@ -1,21 +1,15 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import UserCreateComponent from '@/components/users/create-user/UserCreateComponent.vue';
+import UserListComponent from '@/components/users/list-user/UserListComponent.vue';
+import UserUpdateComponent from '@/components/users/update-user/UserUpdateComponent.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/home',
-      name: 'home',
-      component: HomeView,
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/AboutView.vue'),
+      path: '/',
+      name: 'Singin',
+      component: () => import('@/views/SingIn.vue'),
     },
     {
       path: '/users',
@@ -25,32 +19,24 @@ const router = createRouter({
         {
           path: 'create',
           name: 'Criar usuário',
-          component: () => import('@/components/users/create-user/UserCreateComponents.vue'),
+          component: UserCreateComponent,
+        }, 
+        {
+          path: 'list',
+          name: 'Listar Usuários',
+          component: UserListComponent,
+        },
+        {
+          path: 'edit/:id',
+          name: 'Atualizar Usuário',
+          component: UserUpdateComponent,
         }
       ]
-    },
-    {
-      path: '/',
-      name: 'Singin',
-      component: () => import('@/views/SingIn.vue'),
     },
     {
       path: '/drivers',
       name: 'meunmotoristas',
       component: () => import('@/views/Motorista.vue'),
-      children: [
-        {
-          path: 'view',
-          name: 'Visualizar Motoristas',
-          component: () => import('@/views/Driver/View.vue')
-        },
-        {
-          path: 'registre',
-          name: 'registrar motorista',
-          component: () => import('@/views/Driver/Registre.vue')
-        }
-      ]
-
     },
   ],
 })

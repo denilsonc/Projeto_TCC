@@ -1,30 +1,15 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
-import HelloWorld from './components/HelloWorld.vue';
-import Navbar from './components/NavBar.vue';
-defineProps<{
-}>()
+<script lang="ts">
+export default {
+  name: 'App',
+  head() {
+    return {
+      titleTemplate: '%s | Aquasys'
+    };
+  }
+};
 </script>
-
 <template>
-  <!-- <header>
-    <Navbar v-show="true"/>
-    <img alt="Vue logo" class="logo" src="@/assets/aquasys_logo1.png" width="225" height="225" />
-
-    <div class="wrapper">
-
-      <HelloWorld msg="Aquasys" />
-
-      <nav>
-        <RouterLink to="/">Login</RouterLink>
-        <RouterLink to="/home">Home</RouterLink>
-        <RouterLink to="/users/view">Users</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header> -->
-
-  <RouterView />
+  <router-view />
 </template>
 
 <style scoped>
