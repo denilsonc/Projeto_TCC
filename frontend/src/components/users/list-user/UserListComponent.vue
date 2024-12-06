@@ -4,7 +4,18 @@ export default {
     name: 'UserListComponent',
     data() {
         return {
-            users: []
+            users: [{
+                id: 0,
+                name: null,
+                active: null,
+                address: null,
+                cellphone: null,
+                birthday: null,
+                cpf: null,
+                email: null,
+                password: null,
+                privileges: null,
+            }]
         };
     },
     mounted() {
